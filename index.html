@@ -5,5 +5,18 @@
   </head>
   <body>
     
+ 
+       <!--Przyciski do nawigacji na małych ekranach-->
+      <span id="buttons"><button  onclick="toggleResults()">Results</button><button onclick="toggleProfile()">Profile</button></span>
+
+
+       <!--Dropdown do wyświetlania wyniku i przycisku z restartem-->
+      <div id="dropdown">
+          <div class="dropdown-content">
+              <h1 id="results"></h1>
+              <button  onclick="location.reload()"><i class="fa fa-refresh"></i></button>
+          </div>
+      </div>
+
   </body>
 </html>
