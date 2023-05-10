@@ -4,7 +4,23 @@
     
   </head>
   <body>
+      <!--Karty krupiera-->
+     <h2>Dealer: <span id="dealer-sum"></span></h2>
+     <div id="dealer-cards">
+         <img id="hidden" src="./cards/BACK.png">
+     </div>
     
+     <br>
+    
+       <!--Przyciski do gry-->
+      <button id="hit" onclick="hit()">Hit</button>
+      <button id="stay" onclick="stay()">Stay</button>
+
+      <br>
+
+       <!--Karty gracza-->
+      <h2>You: <span id="your-sum"></span></h2>
+      <div id="your-cards"></div>
  
        <!--Przyciski do nawigacji na małych ekranach-->
       <span id="buttons"><button  onclick="toggleResults()">Results</button><button onclick="toggleProfile()">Profile</button></span>
