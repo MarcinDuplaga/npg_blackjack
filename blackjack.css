@@ -1,1 +1,13 @@
 
+#your-cards img.animate{
+    opacity: 1;
+    transform: translateX(0%);
+}
+#hit:hover, #stay:hover{
+    background-color: white;
+    color:black;
+}
+#hit{
+    margin-right: 10px;
+}
+
