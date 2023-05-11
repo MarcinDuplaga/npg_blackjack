@@ -1,3 +1,20 @@
+h2{
+    color:white;
+    font-size: 2em;
+}
+
+
+#dealer-cards img {
+    height: 200px;
+    width: 140px;
+    margin: 0px 6px;
+    transition: all 0.3s;
+   
+}
+#dealer-cards img:not(#hidden){
+    opacity: 0;
+    transform: translateX(100%);
+}
 
 #dealer-cards img:not(#hidden).animate{
     opacity: 1;
