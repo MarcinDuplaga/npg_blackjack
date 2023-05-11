@@ -1,4 +1,19 @@
 
+#dealer-cards img:not(#hidden).animate{
+    opacity: 1;
+    transform: translateX(0%);
+}
+#dealer-cards img:hover, #your-cards img:hover{
+    box-shadow: 5px 5px 10px black;
+}
+#your-cards img {
+    height: 200px;
+    width: 140px;
+    margin: 0px 6px;
+    transition: all 0.3s;
+    opacity: 0;
+    transform: translateX(100%);
+}
 #your-cards img.animate{
     opacity: 1;
     transform: translateX(0%);
