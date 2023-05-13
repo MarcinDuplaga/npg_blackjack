@@ -43,3 +43,15 @@ h2{
     margin-right: 10px;
 }
 
+#hit, #stay {
+    width: 130px;
+    height: 60px;
+    font-size: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: black;
+    border: solid white 3px;
+    color: white;
+    transition: all 0.2s;
+}
