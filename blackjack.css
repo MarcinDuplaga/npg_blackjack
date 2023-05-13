@@ -43,6 +43,21 @@ h2{
     margin-right: 10px;
 }
 
+/*przyciski do nawigacji na małych ekranach*/
+#buttons{
+    z-index: 20;
+    position: fixed;
+    bottom:0;
+    left:0;
+    display: flex;
+    width:100vw;
+    height:auto;
+    align-items: center;
+    justify-content: space-between;
+    border-top: solid white 3px;
+    visibility: hidden;
+=======
+
 #buttons button{
     width:50vw;
     height:50px;
@@ -54,4 +69,5 @@ h2{
 }
 #buttons button:hover{
     background-color: rgba(48, 46, 46,0.6);
+
 }
