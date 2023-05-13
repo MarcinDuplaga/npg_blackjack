@@ -43,3 +43,15 @@ h2{
     margin-right: 10px;
 }
 
+#buttons button{
+    width:50vw;
+    height:50px;
+    font-size: 1.4em;
+    background-color: rgba(27, 27, 27,0.6);
+    color:white;
+    border:none;
+    cursor: pointer;
+}
+#buttons button:hover{
+    background-color: rgba(48, 46, 46,0.6);
+}
