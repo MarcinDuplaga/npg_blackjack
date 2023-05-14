@@ -55,3 +55,18 @@ h2{
     color: white;
     transition: all 0.2s;
 }
+
+function startGame() {
+    hidden = deck.pop();
+    dealerSum += getValue(hidden);
+    dealerAceCount += checkAce(hidden);
+while (dealerSum < 17) {
+    let cardImg = document.createElement("img");
+    let card = deck.pop();
+    cardImg.src = "./cards/" + card + ".png";
+    dealerSum += getValue(card);
+    dealerAceCount += checkAce(card);
+    document.getElementById("dealer-cards").append(cardImg);
+setTimeout(() => cardImg.classList.add('animate'),10);
+}
+}
