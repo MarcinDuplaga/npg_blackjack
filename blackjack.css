@@ -52,3 +52,24 @@ h2{
     margin-right: 10px;
 }
 
+@media only screen and (max-width:810px) {
+    #toggler{
+        visibility: hidden;
+    }
+
+
+    #recent-results{
+        transform: translateY(-100%);
+    }
+
+
+    #recent-results.visible{
+        transform: translateY(0);
+    }
+    
+     #buttons{
+        visibility:visible;
+    }
+
+}
+
