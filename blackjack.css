@@ -84,3 +84,13 @@ h2{
     opacity:0;
     transition: all 0.3s;
 }
+
+.dropdown-content button{
+    cursor: pointer;
+    width:90px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    border:solid blue 3px;
+    background-color: lightblue;
+    transition: all 0.2s;
+}
