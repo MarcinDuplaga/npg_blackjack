@@ -94,3 +94,15 @@ h2{
     background-color: lightblue;
     transition: all 0.2s;
 }
+
+.dropdown-content button:hover{
+    background-color: blue;
+}
+.dropdown-content button:hover i{
+    color:white;
+}
+.dropdown-content button i{
+    font-size: 3em;
+    color:blue;
+    transition: all 0.2s;
+}
