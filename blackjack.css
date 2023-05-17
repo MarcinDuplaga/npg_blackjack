@@ -52,6 +52,7 @@ h2{
     margin-right: 10px;
 }
 
+
 @media only screen and (max-width:810px) {
     #toggler{
         visibility: hidden;
@@ -71,5 +72,70 @@ h2{
         visibility:visible;
     }
 
+}
+
+=======
+/*przyciski do nawigacji na małych ekranach*/
+#buttons{
+    z-index: 20;
+    position: fixed;
+    bottom:0;
+    left:0;
+    display: flex;
+    width:100vw;
+    height:auto;
+    align-items: center;
+    justify-content: space-between;
+    border-top: solid white 3px;
+    visibility: hidden;
+}
+
+#buttons button{
+    width:50vw;
+    height:50px;
+    font-size: 1.4em;
+    background-color: rgba(27, 27, 27,0.6);
+    color:white;
+    border:none;
+    cursor: pointer;
+}
+#buttons button:hover{
+    background-color: rgba(48, 46, 46,0.6);
+
+}
+#dropdown{
+    width:100vw;
+    height:100vh;
+    position: fixed;
+    display: grid;
+    place-content: center;
+    left:0px;
+    top:0px;
+    z-index: -1;
+    background-color: rgba(231, 235, 235,0.7);
+    opacity:0;
+    transition: all 0.3s;
+}
+
+.dropdown-content button{
+    cursor: pointer;
+    width:90px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    border:solid blue 3px;
+    background-color: lightblue;
+    transition: all 0.2s;
+}
+
+.dropdown-content button:hover{
+    background-color: blue;
+}
+.dropdown-content button:hover i{
+    color:white;
+}
+.dropdown-content button i{
+    font-size: 3em;
+    color:blue;
+    transition: all 0.2s;
 }
 
