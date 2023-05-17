@@ -1,3 +1,12 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    overflow-x: hidden;
+    background-size: 100%;
+    background-image: url("https://media.istockphoto.com/id/1299608766/vector/vector-realistic-isolated-green-poker-table-for-decoration.jpg?s=612x612&w=0&k=20&c=Xk4wepaQjRmYMkfjPTpyy0btenhK-bBH5tpaixWGZJg=");
+}
+
+
 h2{
     color:white;
     font-size: 2em;
@@ -43,6 +52,29 @@ h2{
     margin-right: 10px;
 }
 
+
+@media only screen and (max-width:810px) {
+    #toggler{
+        visibility: hidden;
+    }
+
+
+    #recent-results{
+        transform: translateY(-100%);
+    }
+
+
+    #recent-results.visible{
+        transform: translateY(0);
+    }
+    
+     #buttons{
+        visibility:visible;
+    }
+
+}
+
+=======
 /*przyciski do nawigacji na małych ekranach*/
 #buttons{
     z-index: 20;
@@ -106,3 +138,4 @@ h2{
     color:blue;
     transition: all 0.2s;
 }
+
