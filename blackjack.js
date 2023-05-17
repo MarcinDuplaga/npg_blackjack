@@ -29,3 +29,38 @@ function shuffleDeck() {
         deck[j] = temp;
     }
 }
+
+function stay() {
+    dealerSum = reduceAce(dealerSum, dealerAceCount);
+    yourSum = reduceAce(yourSum, yourAceCount);
+
+
+    canHit = false;
+    document.getElementById("hidden").src = "./cards/" + hidden + ".png";
+
+
+    let message = "";
+    if (yourSum > 21) {
+        message = `You lose, ${user.username}!`;
+        finished('lost');
+    }
+    else if (dealerSum > 21) {
+        message = `You win, ${user.username}!`;
+        finished('won');
+    }
+    else if (yourSum == dealerSum) {
+        message = "Tie!";
+        finished("tie")
+    }
+    else if (yourSum > dealerSum) {
+        message = `You win, ${user.username}!`;
+        finished('won');
+    }
+    else if (yourSum < dealerSum) {
+        message = `You lose, ${user.username}!`;
+        finished('lost');
+    }
+
+   
+}
+
