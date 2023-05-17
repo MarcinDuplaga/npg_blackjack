@@ -29,3 +29,20 @@ function shuffleDeck() {
         deck[j] = temp;
     }
 }
+
+
+function hit() {
+    if (!canHit) {
+        return;
+    }
+
+
+    let cardImg = document.createElement("img");
+    let card = deck.pop();
+    cardImg.src = "./cards/" + card + ".png";
+    yourSum += getValue(card);
+    yourAceCount += checkAce(card);
+    document.getElementById("your-cards").append(cardImg);
+    setTimeout(() => cardImg.classList.add('animate'),10)
+    document.getElementById("your-sum").innerText = reduceAce(yourSum, yourAceCount);
+}
