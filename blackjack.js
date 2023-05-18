@@ -45,4 +45,14 @@ function hit() {
     document.getElementById("your-cards").append(cardImg);
     setTimeout(() => cardImg.classList.add('animate'),10)
     document.getElementById("your-sum").innerText = reduceAce(yourSum, yourAceCount);
+    
+     if (reduceAce(yourSum, yourAceCount) > 21) {
+        canHit = false;
+        document.getElementById("results").innerText = `You lose, ${user.username}!`;
+        document.getElementById('dropdown').style.zIndex = '10';
+        document.getElementById('dropdown').style.opacity = '1';
+        document.getElementById('results').style.transform = 'translateY(0)';
+        finished('lost');
+    }
+
 }
