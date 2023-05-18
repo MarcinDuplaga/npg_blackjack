@@ -60,6 +60,18 @@ function stay() {
         message = `You lose, ${user.username}!`;
         finished('lost');
     }
+    
+    document.getElementById("dealer-sum").innerText = dealerSum;
+    document.getElementById("your-sum").innerText = yourSum;
+    document.getElementById("results").innerText = message;
+
+
+    setTimeout(() => {
+        document.getElementById('dropdown').style.zIndex = '10';
+        document.getElementById('dropdown').style.opacity = '1';
+        document.getElementById('results').style.transform = 'translateY(0)';
+    },800)
+
 
    
 }
