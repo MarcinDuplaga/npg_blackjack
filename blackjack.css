@@ -52,6 +52,16 @@ h2{
     margin-right: 10px;
 }
 
+#hit, #stay {
+    width: 130px;
+    height: 60px;
+    font-size: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: black;
+    border: solid white 3px;
+    color: white;
 
 @media only screen and (max-width:810px) {
     #toggler{
@@ -137,5 +147,11 @@ h2{
     font-size: 3em;
     color:blue;
     transition: all 0.2s;
+}
+
+#results{
+    transform: translateY(-200%);
+    font-size: 5em;
+    transition: all 0.5s;
 }
 
