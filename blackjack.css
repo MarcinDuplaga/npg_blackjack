@@ -149,3 +149,51 @@ h2{
     transition: all 0.2s;
 }
 
+#profile form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    margin-top: -20px;
+    width:330px;
+}
+#profile form input:not(input[type="checkbox"]){
+    width: 90%;
+    height:35px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    padding:0px 10px;
+}
+#profile form label{
+    align-self: flex-start;
+    padding-left: 10px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    color:white;
+}
+#profile form span{
+    margin-top: 25px;
+}
+#profile form span label{
+    font-size: 0.7em;
+    padding-left: 0px;
+}
+#profile form button{
+    width:90%;
+    height:40px;
+    background-color: transparent;
+    color:white;
+    font-size: 1.2em;
+    border-radius: 20px;
+    border: solid white 4px;
+    margin-top: 30px;
+    transition: all 0.3s;
+}
+#profile form button:hover{
+    background-color: white;
+    color:black;
+    box-shadow: 0px 0px 20px rgb(197, 194, 194);
+    cursor: pointer;
+}
