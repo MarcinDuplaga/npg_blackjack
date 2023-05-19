@@ -31,6 +31,7 @@ function shuffleDeck() {
         deck[j] = temp;
     }
 }
+
 function startGame() {
     hidden = deck.pop();
     dealerSum += getValue(hidden);
@@ -56,6 +57,19 @@ function startGame() {
         setTimeout(() => cardImg.classList.add('animate'),10);
     }
 }
+function getValue(card) {
+    let data = card.split("-");
+    let value = data[0];
+
+
+    if (isNaN(value)) {
+        if (value == "A") {
+            return 11;
+        }
+        return 10;
+    }
+    return parseInt(value);
+}
 
 function checkAce(card) {
     if (card[0] == "A") {
@@ -71,4 +85,6 @@ function reduceAce(playerSum, playerAceCount) {
     }
     return playerSum;
 }
+
+
 
