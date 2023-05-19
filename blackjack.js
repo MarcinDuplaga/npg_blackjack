@@ -164,5 +164,21 @@ function reduceAce(playerSum, playerAceCount) {
 
 =======
 
+function changeProfile(){
+    let nameInput = document.getElementById('username').value;
+    let emailInput = document.getElementById('email').value;
+    let checkboxInput = document.getElementById('agreement').checked;
+
+
+    if(nameInput.length > 0) user.username = nameInput
+    if(emailInput.length > 0) user.email = emailInput
+    user.sendMessage = checkboxInput
+
+
+    window.localStorage.setItem('user', JSON.stringify(user))
+    document.getElementById('name').innerHTML = user.username
+}
+
+
 
 
