@@ -179,6 +179,14 @@ function changeProfile(){
     document.getElementById('name').innerHTML = user.username
 }
 
+function toggleProfile(){
+    document.getElementById('profile').classList.toggle('visible')
+    document.getElementById('toggler-profile').classList.toggle('visible')
+    if(window.innerWidth<=810){
+        document.getElementById('recent-results').classList.remove('visible')
+        document.getElementById('toggler').classList.remove('visible')
+    }
+}
 
 
 
