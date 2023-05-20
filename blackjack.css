@@ -78,6 +78,18 @@ h2{
         transform: translateY(0);
     }
     
+    #toggler-profile{
+        visibility: hidden;
+    }
+    
+    #profile{
+        transform: translateY(100%);
+    }
+    
+    #profile.visible{
+        transform: translateY(0);
+    }
+    
      #buttons{
         visibility:visible;
     }
