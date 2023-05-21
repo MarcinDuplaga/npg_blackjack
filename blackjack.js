@@ -13,6 +13,23 @@ var recentResults = window.localStorage.getItem('recentResults') ?  JSON.parse(w
 var canHit = true;
 var user = window.localStorage.getItem('user') ? JSON.parse(window.localStorage.getItem('user')) : {username:'', email:'', sendMessage:false};
 
+
+
+
+function resize(){
+    var dealerChildren = document.getElementById('dealer-cards').children;
+    var playerChildren = document.getElementById('your-cards').children;
+    if(window.innerWidth <= 810){
+        document.getElementById('recent-results').style.width = '100vw';
+        document.getElementById('profile').style.width = '100vw';
+    }
+    else{
+        document.getElementById('recent-results').style.width = 'auto';
+        document.getElementById('profile').style.width = 'auto';
+    }
+}
+
+
 =======
 function buildDeck() {
     let values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
