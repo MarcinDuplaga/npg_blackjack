@@ -188,5 +188,30 @@ function toggleProfile(){
     }
 }
 
-
+function finished(result){
+    date = (new Date()).toDateString().substring(4,11)
+     + (JSON.stringify((new Date()).getHours())).padStart(2, '0')
+      + ':' +(JSON.stringify((new Date()).getMinutes())).padStart(2, '0')
+      if(recentResults.length >= 13){
+        recentResults.reverse()
+        recentResults.pop()
+        recentResults.reverse()
+    }
+    switch(result){
+        case 'won':
+            recentResults.push({result: "Victory!",date: date});
+            window.localStorage.setItem('recentResults', JSON.stringify(recentResults))
+            break;
+        case 'lost':
+            recentResults.push({result: "Defeat.",date: date});
+            window.localStorage.setItem('recentResults', JSON.stringify(recentResults))
+            break;
+        case 'tie':
+            recentResults.reverse().push({result: "Tie",date: date});
+            window.localStorage.setItem('recentResults', JSON.stringify(recentResults))
+            break;
+        default:
+            break;
+    }
+}
 
