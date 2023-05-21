@@ -161,6 +161,12 @@ h2{
     transition: all 0.2s;
 }
 
+#results{
+    transform: translateY(-200%);
+    font-size: 5em;
+    transition: all 0.5s;
+}
+
 #profile form{
     display: flex;
     flex-direction: column;
