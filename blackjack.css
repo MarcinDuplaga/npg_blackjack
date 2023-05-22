@@ -167,6 +167,67 @@ h2{
     transition: all 0.5s;
 }
 
+
+#profile{
+    position: fixed;
+    top:0;
+    right:0;
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    background-color: #16304d;
+    transform:translateX(100%);
+    overflow-y: auto;
+    transition: transform 0.3s;
+
+
+}
+#profile.visible{
+    transform:translateX(0);
+}
+#toggler-profile{
+    position: absolute;
+    border-radius: 0px 0px 10px 10px;
+    padding-top: 5px;
+    z-index: 5;
+    right:270px;
+    top:50%;
+    width:250px;
+    height:50px;
+    color:white;
+    font-size: 1.1em;
+    border:none;
+    background-color:#16304d ;
+    transform: rotate(90deg) translateY(-370px);
+    transition: transform 0.3s;
+}
+    
+#toggler-profile:hover{
+    background-color: #112334;
+    cursor: pointer;
+}
+    
+#toggler-profile.visible{
+    transform: rotate(90deg) translateY(0px);
+}
+    
+#profile div{
+    width:200px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-size: 100%;
+    background-image: url('https://us.123rf.com/450wm/tuktukdesign/tuktukdesign1608/tuktukdesign160800043/61010830-user-icon-cz%C5%82owiek-profil-biznesmen-avatar-ilustracji-wektorowych-osoba-glyph.jpg?ver=6');
+}
+    
+#profile article{
+    text-align: left;
+    margin-top: 50px;
+    width:280px;
+    font-size: 0.8em;
+    color:rgb(121, 116, 116);
+  
 #profile form{
     display: flex;
     flex-direction: column;
@@ -214,4 +275,5 @@ h2{
     color:black;
     box-shadow: 0px 0px 20px rgb(197, 194, 194);
     cursor: pointer;
+
 }
