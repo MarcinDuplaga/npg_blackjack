@@ -195,6 +195,14 @@ function reduceAce(playerSum, playerAceCount) {
 }
 
 
+function toggleResults(){
+    document.getElementById('recent-results').classList.toggle('visible')
+    document.getElementById('toggler').classList.toggle('visible')
+    if(window.innerWidth<=810){
+        document.getElementById('profile').classList.remove('visible')
+        document.getElementById('toggler-profile').classList.remove('visible')
+    }
+}
 
 
 function changeProfile(){
