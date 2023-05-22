@@ -29,8 +29,24 @@ function resize(){
     }
 }
 
+window.onresize = resize
+window.onload = function(){
 
-=======
+
+    buildDeck()
+    shuffleDeck()
+    startGame()
+    sendEmail()
+    resize()
+    createResultsTable()
+    document.getElementById('name').innerHTML = user.username
+   
+    document.getElementById("your-sum").innerText = reduceAce(yourSum, yourAceCount);
+
+
+}
+
+
 function buildDeck() {
     let values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
     let types = ["C", "D", "H", "S"];
@@ -77,8 +93,8 @@ function hit() {
         document.getElementById('results').style.transform = 'translateY(0)';
         finished('lost');
     }
-
 }
+
 function stay() {
     dealerSum = reduceAce(dealerSum, dealerAceCount);
     yourSum = reduceAce(yourSum, yourAceCount);
@@ -119,11 +135,11 @@ function stay() {
         document.getElementById('dropdown').style.zIndex = '10';
         document.getElementById('dropdown').style.opacity = '1';
         document.getElementById('results').style.transform = 'translateY(0)';
-    },800)
-   
+    },800)   
 }
 
-=======
+
+
 function startGame() {
     hidden = deck.pop();
     dealerSum += getValue(hidden);
