@@ -215,3 +215,38 @@ function finished(result){
     }
 }
 
+function createResultsTable(){
+    var table = document.getElementById('table');
+    let i = recentResults.length;
+    recentResults.forEach(item => {
+       var row = table.insertRow(1);
+       var cell1 = row.insertCell(0);
+       var cell2 = row.insertCell(1);
+       var cell3 = row.insertCell(2);
+
+
+       cell1.innerHTML = i;
+       cell2.innerHTML = item.date;
+       cell3.innerHTML = item.result;
+
+
+       switch(item.result){
+            case 'Victory!':
+                cell1.style.background = 'rgb(14, 237, 166)'
+                cell1.style.borderColor = 'green'
+                break;
+            case 'Defeat.':
+                cell1.style.background = 'rgb(224, 113, 94)'
+                cell1.style.borderColor = 'rgb(117, 30, 12)'
+                break;
+            case 'Tie':
+                cell1.style.background = 'rgb(32, 34, 35)'
+                cell1.style.borderColor = 'black'
+                break;
+            default:
+                break;
+       }
+     
+       i--;
+    })
+}
