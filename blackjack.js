@@ -13,7 +13,40 @@ var recentResults = window.localStorage.getItem('recentResults') ?  JSON.parse(w
 var canHit = true;
 var user = window.localStorage.getItem('user') ? JSON.parse(window.localStorage.getItem('user')) : {username:'', email:'', sendMessage:false};
 
-=======
+
+
+
+function resize(){
+    var dealerChildren = document.getElementById('dealer-cards').children;
+    var playerChildren = document.getElementById('your-cards').children;
+    if(window.innerWidth <= 810){
+        document.getElementById('recent-results').style.width = '100vw';
+        document.getElementById('profile').style.width = '100vw';
+    }
+    else{
+        document.getElementById('recent-results').style.width = 'auto';
+        document.getElementById('profile').style.width = 'auto';
+    }
+}
+
+window.onresize = resize
+window.onload = function(){
+
+
+    buildDeck()
+    shuffleDeck()
+    startGame()
+    sendEmail()
+    resize()
+    createResultsTable()
+    document.getElementById('name').innerHTML = user.username
+   
+    document.getElementById("your-sum").innerText = reduceAce(yourSum, yourAceCount);
+
+
+}
+
+
 function buildDeck() {
     let values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
     let types = ["C", "D", "H", "S"];
@@ -45,7 +78,7 @@ function hit() {
 
     let cardImg = document.createElement("img");
     let card = deck.pop();
-    cardImg.src = "./cards/" + card + ".png";
+    cardImg.src = "./cards/cards/" + card + ".png";
     yourSum += getValue(card);
     yourAceCount += checkAce(card);
     document.getElementById("your-cards").append(cardImg);
@@ -60,15 +93,15 @@ function hit() {
         document.getElementById('results').style.transform = 'translateY(0)';
         finished('lost');
     }
-
 }
+
 function stay() {
     dealerSum = reduceAce(dealerSum, dealerAceCount);
     yourSum = reduceAce(yourSum, yourAceCount);
 
 
     canHit = false;
-    document.getElementById("hidden").src = "./cards/" + hidden + ".png";
+    document.getElementById("hidden").src = "./cards/cards/" + hidden + ".png";
 
 
     let message = "";
@@ -102,11 +135,11 @@ function stay() {
         document.getElementById('dropdown').style.zIndex = '10';
         document.getElementById('dropdown').style.opacity = '1';
         document.getElementById('results').style.transform = 'translateY(0)';
-    },800)
-   
+    },800)   
 }
 
-=======
+
+
 function startGame() {
     hidden = deck.pop();
     dealerSum += getValue(hidden);
@@ -114,7 +147,7 @@ function startGame() {
     while (dealerSum < 17) {
         let cardImg = document.createElement("img");
         let card = deck.pop();
-        cardImg.src = "./cards/" + card + ".png";
+        cardImg.src = "./cards/cards/" + card + ".png";
         dealerSum += getValue(card);
         dealerAceCount += checkAce(card);
         document.getElementById("dealer-cards").append(cardImg);
@@ -125,7 +158,7 @@ function startGame() {
     for (let i = 0; i < 2; i++) {
         let cardImg = document.createElement("img");
         let card = deck.pop();
-        cardImg.src = "./cards/" + card + ".png";
+        cardImg.src = "./cards/cards/" + card + ".png";
         yourSum += getValue(card);
         yourAceCount += checkAce(card);
         document.getElementById("your-cards").append(cardImg);
@@ -162,6 +195,14 @@ function reduceAce(playerSum, playerAceCount) {
 }
 
 
+function toggleResults(){
+    document.getElementById('recent-results').classList.toggle('visible')
+    document.getElementById('toggler').classList.toggle('visible')
+    if(window.innerWidth<=810){
+        document.getElementById('profile').classList.remove('visible')
+        document.getElementById('toggler-profile').classList.remove('visible')
+    }
+}
 
 function changeProfile(){
     let nameInput = document.getElementById('username').value;
@@ -248,7 +289,7 @@ function createResultsTable(){
      
        i--;
     })
-=======
+} 
 function sendEmail() {
     if(recentResults.length<5) return
     const lastFive = recentResults.slice(-5);
@@ -264,7 +305,6 @@ function sendEmail() {
 
 
     if(user.sendMessage && isTrue){
-        console.log('yes')
         emailjs.send(serviceID, templateID, params)
             .then(message => alert("Check your inbox, there is a surprise!"))
             .catch(err => console.log(err))
