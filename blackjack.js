@@ -78,7 +78,7 @@ function hit() {
 
     let cardImg = document.createElement("img");
     let card = deck.pop();
-    cardImg.src = "./cards/" + card + ".png";
+    cardImg.src = "./cards/cards/" + card + ".png";
     yourSum += getValue(card);
     yourAceCount += checkAce(card);
     document.getElementById("your-cards").append(cardImg);
@@ -101,7 +101,7 @@ function stay() {
 
 
     canHit = false;
-    document.getElementById("hidden").src = "./cards/" + hidden + ".png";
+    document.getElementById("hidden").src = "./cards/cards/" + hidden + ".png";
 
 
     let message = "";
@@ -147,7 +147,7 @@ function startGame() {
     while (dealerSum < 17) {
         let cardImg = document.createElement("img");
         let card = deck.pop();
-        cardImg.src = "./cards/" + card + ".png";
+        cardImg.src = "./cards/cards/" + card + ".png";
         dealerSum += getValue(card);
         dealerAceCount += checkAce(card);
         document.getElementById("dealer-cards").append(cardImg);
@@ -158,7 +158,7 @@ function startGame() {
     for (let i = 0; i < 2; i++) {
         let cardImg = document.createElement("img");
         let card = deck.pop();
-        cardImg.src = "./cards/" + card + ".png";
+        cardImg.src = "./cards/cards/" + card + ".png";
         yourSum += getValue(card);
         yourAceCount += checkAce(card);
         document.getElementById("your-cards").append(cardImg);
@@ -305,7 +305,6 @@ function sendEmail() {
 
 
     if(user.sendMessage && isTrue){
-        console.log('yes')
         emailjs.send(serviceID, templateID, params)
             .then(message => alert("Check your inbox, there is a surprise!"))
             .catch(err => console.log(err))
