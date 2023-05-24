@@ -6,277 +6,9 @@ body {
     background-image: url("https://media.istockphoto.com/id/1299608766/vector/vector-realistic-isolated-green-poker-table-for-decoration.jpg?s=612x612&w=0&k=20&c=Xk4wepaQjRmYMkfjPTpyy0btenhK-bBH5tpaixWGZJg=");
 }
 
-h2{
-    color:white;
-    font-size: 2em;
-}
+/* Tabela ostatnich wyników */
 
-
-#dealer-cards img {
-    height: 200px;
-    width: 140px;
-    margin: 0px 6px;
-    transition: all 0.3s;
-   
-}
-#dealer-cards img:not(#hidden){
-    opacity: 0;
-    transform: translateX(100%);
-}
-
-#dealer-cards img:not(#hidden).animate{
-    opacity: 1;
-    transform: translateX(0%);
-}
-#dealer-cards img:hover, #your-cards img:hover{
-    box-shadow: 5px 5px 10px black;
-}
-#your-cards img {
-    height: 200px;
-    width: 140px;
-    margin: 0px 6px;
-    transition: all 0.3s;
-    opacity: 0;
-    transform: translateX(100%);
-}
-#your-cards img.animate{
-    opacity: 1;
-    transform: translateX(0%);
-}
-#hit:hover, #stay:hover{
-    background-color: white;
-    color:black;
-}
-#hit{
-    margin-right: 10px;
-}
-
-#hit, #stay {
-    width: 130px;
-    height: 60px;
-    font-size: 20px;
-    margin-top: 20px;
-    border-radius: 10px;
-    cursor: pointer;
-    background-color: black;
-    border: solid white 3px;
-    color: white;
-
-@media only screen and (max-width:810px) {
-    #toggler{
-        visibility: hidden;
-    }
-
-
-    #recent-results{
-        transform: translateY(-100%);
-    }
-
-
-    #recent-results.visible{
-        transform: translateY(0);
-    }
-    
-    #toggler-profile{
-        visibility: hidden;
-    }
-    
-    #profile{
-        transform: translateY(100%);
-    }
-    
-    #profile.visible{
-        transform: translateY(0);
-    }
-    
-     #buttons{
-        visibility:visible;
-    }
-
-}
-
-/*przyciski do nawigacji na małych ekranach*/
-#buttons{
-    z-index: 20;
-    position: fixed;
-    bottom:0;
-    left:0;
-    display: flex;
-    width:100vw;
-    height:auto;
-    align-items: center;
-    justify-content: space-between;
-    border-top: solid white 3px;
-    visibility: hidden;
-}
-
-#buttons button{
-    width:50vw;
-    height:50px;
-    font-size: 1.4em;
-    background-color: rgba(27, 27, 27,0.6);
-    color:white;
-    border:none;
-    cursor: pointer;
-}
-#buttons button:hover{
-    background-color: rgba(48, 46, 46,0.6);
-
-}
-#dropdown{
-    width:100vw;
-    height:100vh;
-    position: fixed;
-    display: grid;
-    place-content: center;
-    left:0px;
-    top:0px;
-    z-index: -1;
-    background-color: rgba(231, 235, 235,0.7);
-    opacity:0;
-    transition: all 0.3s;
-}
-
-.dropdown-content button{
-    cursor: pointer;
-    width:90px;
-    aspect-ratio: 1/1;
-    border-radius: 50%;
-    border:solid blue 3px;
-    background-color: lightblue;
-    transition: all 0.2s;
-}
-
-.dropdown-content button:hover{
-    background-color: blue;
-}
-.dropdown-content button:hover i{
-    color:white;
-}
-.dropdown-content button i{
-    font-size: 3em;
-    color:blue;
-    transition: all 0.2s;
-}
-
-#results{
-    transform: translateY(-200%);
-    font-size: 5em;
-    transition: all 0.5s;
-}
-
-
-#profile{
-    position: fixed;
-    top:0;
-    right:0;
-    height:100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 20px;
-    background-color: #16304d;
-    transform:translateX(100%);
-    overflow-y: auto;
-    transition: transform 0.3s;
-
-
-}
-#profile.visible{
-    transform:translateX(0);
-}
-#toggler-profile{
-    position: absolute;
-    border-radius: 0px 0px 10px 10px;
-    padding-top: 5px;
-    z-index: 5;
-    right:270px;
-    top:50%;
-    width:250px;
-    height:50px;
-    color:white;
-    font-size: 1.1em;
-    border:none;
-    background-color:#16304d ;
-    transform: rotate(90deg) translateY(-370px);
-    transition: transform 0.3s;
-}
-    
-#toggler-profile:hover{
-    background-color: #112334;
-    cursor: pointer;
-}
-    
-#toggler-profile.visible{
-    transform: rotate(90deg) translateY(0px);
-}
-    
-#profile div{
-    width:200px;
-    aspect-ratio: 1/1;
-    border-radius: 50%;
-    background-size: 100%;
-    background-image: url('https://us.123rf.com/450wm/tuktukdesign/tuktukdesign1608/tuktukdesign160800043/61010830-user-icon-cz%C5%82owiek-profil-biznesmen-avatar-ilustracji-wektorowych-osoba-glyph.jpg?ver=6');
-}
-    
-#profile article{
-    text-align: left;
-    margin-top: 50px;
-    width:280px;
-    font-size: 0.8em;
-    color:rgb(121, 116, 116);
-  
-#profile form{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 20px;
-    margin-top: -20px;
-    width:330px;
-}
-#profile form input:not(input[type="checkbox"]){
-    width: 90%;
-    height:35px;
-    border: none;
-    border-radius: 5px;
-    outline: none;
-    padding:0px 10px;
-}
-#profile form label{
-    align-self: flex-start;
-    padding-left: 10px;
-    margin-top: 25px;
-    margin-bottom: 10px;
-    color:white;
-}
-#profile form span{
-    margin-top: 25px;
-}
-#profile form span label{
-    font-size: 0.7em;
-    padding-left: 0px;
-}
-#profile form button{
-    width:90%;
-    height:40px;
-    background-color: transparent;
-    color:white;
-    font-size: 1.2em;
-    border-radius: 20px;
-    border: solid white 4px;
-    margin-top: 30px;
-    transition: all 0.3s;
-}
-#profile form button:hover{
-    background-color: white;
-    color:black;
-    box-shadow: 0px 0px 20px rgb(197, 194, 194);
-    cursor: pointer;
-
-}
-
-    #recent-results{
+#recent-results{
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -315,8 +47,8 @@ h2{
     opacity:0.7;
 }
 #recent-results td:nth-child(2){
-    border-radius: 5px 0px 0px 5px;
-    background-color: #112334;  
+    border-radius: 5px 0px 0px 5px; 
+    background-color: #112334;   
 }
 #recent-results td:nth-child(3){
     border-radius: 0px 5px 5px 0px;  
@@ -338,7 +70,6 @@ h2{
     transform: rotate(90deg) translateY(380px);
     transition: transform 0.3s;
 
-
 }
 #toggler:hover{
     background-color: #112334;
@@ -346,4 +77,277 @@ h2{
 }
 #toggler.visible{
     transform: rotate(90deg) translateY(0px);
+}
+
+
+
+/* Style kart i interfejsu gry(przycisków)*/
+
+h2{
+    color:white;
+    font-size: 2em;
+}
+
+#dealer-cards img {
+    height: 200px;
+    width: 140px;
+    margin: 0px 6px;
+    transition: all 0.3s;
+   
+}
+#dealer-cards img:not(#hidden){
+    opacity: 0;
+    transform: translateX(100%);
+}
+#dealer-cards img:not(#hidden).animate{
+    opacity: 1;
+    transform: translateX(0%);
+}
+#dealer-cards img:hover, #your-cards img:hover{
+    box-shadow: 5px 5px 10px black;
+}
+
+#your-cards img {
+    height: 200px;
+    width: 140px;
+    margin: 0px 6px;
+    transition: all 0.3s;
+    opacity: 0;
+    transform: translateX(100%);
+}
+#your-cards img.animate{
+    opacity: 1;
+    transform: translateX(0%);
+}
+
+#hit, #stay {
+    width: 130px;
+    height: 60px;
+    font-size: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    cursor:pointer;
+    background-color: black;
+    border:solid white 3px;
+    color:white;
+    transition: all 0.2s;
+}
+#hit:hover, #stay:hover{
+    background-color: white;
+    color:black;
+}
+#hit{
+    margin-right: 10px;
+}
+
+
+
+/* Profil */
+
+#profile{
+    position: fixed;
+    top:0;
+    right:0;
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    background-color: #16304d;
+    transform:translateX(100%);
+    overflow-y: auto;
+    transition: transform 0.3s;
+
+}
+#profile.visible{
+    transform:translateX(0);
+}
+#toggler-profile{
+    position: absolute;
+    border-radius: 0px 0px 10px 10px;
+    padding-top: 5px;
+    z-index: 5;
+    right:270px;
+    top:50%;
+    width:250px;
+    height:50px;
+    color:white;
+    font-size: 1.1em;
+    border:none;
+    background-color:#16304d ;
+    transform: rotate(90deg) translateY(-370px);
+    transition: transform 0.3s;
+}
+#toggler-profile:hover{
+    background-color: #112334;
+    cursor: pointer;
+}
+#toggler-profile.visible{
+    transform: rotate(90deg) translateY(0px);
+}
+#profile div{
+    width:200px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-size: 100%;
+    background-image: url('https://us.123rf.com/450wm/tuktukdesign/tuktukdesign1608/tuktukdesign160800043/61010830-user-icon-cz%C5%82owiek-profil-biznesmen-avatar-ilustracji-wektorowych-osoba-glyph.jpg?ver=6');
+}
+#profile article{
+    text-align: left;
+    margin-top: 50px;
+    width:280px;
+    font-size: 0.8em;
+    color:rgb(121, 116, 116);
+}
+#profile form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    margin-top: -20px;
+    width:330px;
+}
+
+#profile form input:not(input[type="checkbox"]){
+    width: 90%;
+    height:35px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    padding:0px 10px;
+}
+#profile form label{
+    align-self: flex-start;
+    padding-left: 10px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    color:white;
+}
+#profile form span{
+    margin-top: 25px;
+}
+#profile form span label{
+    font-size: 0.7em;
+    padding-left: 0px;
+}
+#profile form button{
+    width:90%;
+    height:40px;
+    background-color: transparent;
+    color:white;
+    font-size: 1.2em;
+    border-radius: 20px;
+    border: solid white 4px;
+    margin-top: 30px;
+    transition: all 0.3s;
+}
+#profile form button:hover{
+    background-color: white;
+    color:black;
+    box-shadow: 0px 0px 20px rgb(197, 194, 194);
+    cursor: pointer;
+}
+
+
+
+/* Przyciski do nawigacji na małych ekranach */
+
+#buttons{
+    z-index: 20;
+    position: fixed;
+    bottom:0;
+    left:0;
+    display: flex;
+    width:100vw;
+    height:auto;
+    align-items: center;
+    justify-content: space-between;
+    border-top: solid white 3px;
+    visibility: hidden;
+}
+#buttons button{
+    width:50vw;
+    height:50px;
+    font-size: 1.4em;
+    background-color: rgba(27, 27, 27,0.6);
+    color:white;
+    border:none;
+    cursor: pointer;
+}
+#buttons button:hover{
+    background-color: rgba(48, 46, 46,0.6);
+}
+
+
+/* Dropdown do wyświetlania wyniku i przycisku z restartem */
+
+#dropdown{
+    width:100vw;
+    height:100vh;
+    position: fixed;
+    display: grid;
+    place-content: center;
+    left:0px;
+    top:0px;
+    z-index: -1;
+    background-color: rgba(231, 235, 235,0.7);
+    opacity:0;
+    transition: all 0.3s;
+}
+.dropdown-content button{
+    cursor: pointer;
+    width:90px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    border:solid blue 3px;
+    background-color: lightblue;
+    transition: all 0.2s;
+}
+.dropdown-content button:hover{
+    background-color: blue;
+}
+.dropdown-content button:hover i{
+    color:white;
+}
+.dropdown-content button i{
+    font-size: 3em;
+    color:blue;
+    transition: all 0.2s;
+}
+#results{
+    transform: translateY(-200%);
+    font-size: 5em;
+    transition: all 0.5s;
+}
+
+
+
+/* Responsywność na małych ekranach */
+
+@media only screen and (max-width:810px) {
+    #toggler{
+        visibility: hidden;
+    }
+
+    #recent-results{
+        transform: translateY(-100%);
+    }
+
+    #recent-results.visible{
+        transform: translateY(0);
+    }
+    #toggler-profile{
+        visibility: hidden;
+    }
+    #profile{
+        transform: translateY(100%);
+    }
+
+    #profile.visible{
+        transform: translateY(0);
+    }
+    #buttons{
+        visibility:visible;
+    }
 }
