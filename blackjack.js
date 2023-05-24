@@ -289,7 +289,7 @@ function createResultsTable(){
      
        i--;
     })
-=======
+    
 function sendEmail() {
     if(recentResults.length<5) return
     const lastFive = recentResults.slice(-5);
