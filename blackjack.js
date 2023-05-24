@@ -163,7 +163,6 @@ function reduceAce(playerSum, playerAceCount) {
 
 
 
-
 function changeProfile(){
     let nameInput = document.getElementById('username').value;
     let emailInput = document.getElementById('email').value;
@@ -249,4 +248,25 @@ function createResultsTable(){
      
        i--;
     })
+=======
+function sendEmail() {
+    if(recentResults.length<5) return
+    const lastFive = recentResults.slice(-5);
+
+
+    let isTrue = lastFive.every(elem => elem.result === 'Victory!')
+    var params = {
+        username: user.username,
+        email: user.email
+    }
+    const serviceID = "service_jcox09c"
+    const templateID = 'template_j3pry8m'
+
+
+    if(user.sendMessage && isTrue){
+        console.log('yes')
+        emailjs.send(serviceID, templateID, params)
+            .then(message => alert("Check your inbox, there is a surprise!"))
+            .catch(err => console.log(err))
+    }
 }
